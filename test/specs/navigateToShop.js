@@ -9,8 +9,10 @@ describe('User navigates to shop page', () => {
     });
 
     it('test should accept cookies', () => {
-        expect(browser.getCookies()).toMatchObject(JSON);
+        const cookies = browser.getCookies()
+        expect(cookies).toMatchObject(JSON);
         //console.log(cookies)
+        expect(cookies['domain']=='.sky.com').toBeTruthy
      });
 
     it('When I navigate to "Deals"', () => {

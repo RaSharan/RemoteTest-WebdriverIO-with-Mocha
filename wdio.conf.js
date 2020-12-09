@@ -18,15 +18,15 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/*.js',
-        './test/specs/**/search.page.js',
-        './test/specs/**/search.js',
+        //'./test/specs/**/search.page.js',
+        //'./test/specs/**/search.js',
         //'./test/specs/**/latestOffers.page.js',
         //'./test/specs/**/latestOffers.js',
-        //'./test/specs/**/helper.js',
+        './test/specs/**/helper.js',
         //'./test/specs/**/navigate.page.js',
         //'./test/specs/**/navigateToShop.js',
-        //'./test/specs/**/verifySignIn.js',
-        //'./test/specs/**/login.page.js',
+        './test/specs/**/verifySignIn.js',
+        './test/specs/**/login.page.js',
         './test/specs/**/page.js',
         './test/specs/**/index.js',
     ],
@@ -141,9 +141,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
-
-
-    
+  
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -166,6 +164,7 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     // onPrepare: function (config, capabilities) {
+        
     // },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
@@ -195,12 +194,11 @@ exports.config = {
      * @param {Object}         browser      instance of created browser/device session
      */
      before: function (capabilities, specs) {
-        //browser.pause(1000)
+        //agreeCookies();
         $(resources.cookieMessage).waitForDisplayed({timeout:10000});
         browser.switchToFrame($(resources.cookieMessage));
         $(resources.agree).click();
         browser.switchToParentFrame();
-
      },
     /**
      * Runs before a WebdriverIO command gets executed.

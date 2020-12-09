@@ -19,6 +19,7 @@ describe('User sees a list of offers on the latest offers page', () => {
     it('Assert first 3 prices"', () => {
         let offerPricesList = []
         offerPricesList = LatestOffersPage.offerPricesListText;
+        
         for (let index = 0; index < 3; index++) {
             expect(offerPricesList[index]===resources.pricesList[index]).toBeTruthy
         }

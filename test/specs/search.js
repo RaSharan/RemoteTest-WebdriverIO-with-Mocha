@@ -4,18 +4,18 @@ import resources from '../resources';
 
 // Scenario: User sees the editorial section in specific searches
 describe('User sees the editorial section in specific searches', () => {
-
+    
     before('Given I am on the home page', () => {
         SearchPage.open();
+        //browser.pause(1000)
         $(resources.cookieMessage).waitForDisplayed({timeout:10000});
         browser.switchToFrame($(resources.cookieMessage));
         $(resources.agree).click();
         browser.switchToParentFrame();
-        expect(browser).toHaveUrl("https://www.sky.com/")
     });
 
     it('Click search bar', () => {
-        //expect(SearchPage.searchBtn).toBeExisting();
+        expect(browser).toHaveUrl("https://www.sky.com/")
         browser.pause(10000)
         SearchPage.searchBtn.click();
         expect(SearchPage.searchInput).toBeDisplayed();
@@ -24,10 +24,25 @@ describe('User sees the editorial section in specific searches', () => {
     it('When I search "sky" in the search bar', () => {
         browser.pause(5000)
         SearchPage.searchInput.setValue("sky")
-        const chkTxt = SearchPage.searchInput.getText()
+
+        let chkTxt = SearchPage.searchInput.getText()
         if (chkTxt == "sky"){
             expect(chkTxt).toBeTruthy
         }
+        else
+            expect(chkTxt).toBeFalsy
+
+    });
+
+    it('When I search "tv" in the search bar', () => {
+        browser.pause(5000)
+        SearchPage.searchInput.setValue("tv")
+        let chkTxt = SearchPage.searchInput.getText()
+        if (chkTxt == "tv"){
+            expect(chkTxt).toBeTruthy
+        }
+        else
+            expect(chkTxt).toBeFalsy
 
     });
 
