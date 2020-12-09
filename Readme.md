@@ -20,9 +20,12 @@ Feature.txt
 ***Pre-requisites***
 
 -You'll need Node.js installed globally
+
 -Install at least v12.16.1 or higher as this is the oldest active LTS version
+
 -Only releases that are or will become an LTS release are officially supported
--JDK 1.8+
+
+-JDK 1.8+ is needed
 
 --------------------------------------------------------------------------------------------------------------------------------------
 ***Getting Started/Installation***
