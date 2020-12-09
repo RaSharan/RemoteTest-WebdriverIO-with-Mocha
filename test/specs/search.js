@@ -1,13 +1,11 @@
 import SearchPage from '../pageobjects/search.page'
 import resources from '../resources';
-// Feature: This feature will make the search show the results that are determined by editorial, as well as generic searches.
+import {waitAndClick, waitPreloader} from '../utilities/helper'
 
-// Scenario: User sees the editorial section in specific searches
 describe('User sees the editorial section in specific searches', () => {
     
     before('Given I am on the home page', () => {
         SearchPage.open();
-        //browser.pause(1000)
         $(resources.cookieMessage).waitForDisplayed({timeout:10000});
         browser.switchToFrame($(resources.cookieMessage));
         $(resources.agree).click();
@@ -16,13 +14,13 @@ describe('User sees the editorial section in specific searches', () => {
 
     it('Click search bar', () => {
         expect(browser).toHaveUrl("https://www.sky.com/")
-        browser.pause(10000)
-        SearchPage.searchBtn.click();
+        waitAndClick(SearchPage.searchBtn,6000);
         expect(SearchPage.searchInput).toBeDisplayed();
     });
 
     it('When I search "sky" in the search bar', () => {
-        browser.pause(5000)
+
+        waitPreloader(SearchPage.searchInput,5000)
         SearchPage.searchInput.setValue("sky")
 
         let chkTxt = SearchPage.searchInput.getText()
@@ -35,7 +33,8 @@ describe('User sees the editorial section in specific searches', () => {
     });
 
     it('When I search "tv" in the search bar', () => {
-        browser.pause(5000)
+        
+        waitPreloader(SearchPage.searchInput,5000)
         SearchPage.searchInput.setValue("tv")
         let chkTxt = SearchPage.searchInput.getText()
         if (chkTxt == "tv"){

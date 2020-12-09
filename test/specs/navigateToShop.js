@@ -1,25 +1,26 @@
 import NavigatePage from '../pageobjects/navigate.page'
-// Feature: This feature will make sure that the shop page is navigable and usable.
+import {waitAndClick} from '../utilities/helper'
+import resources from '../resources'
 
-// Scenario: User navigates to shop page
 describe('User navigates to shop page', () => {
 
     before('Given I am on the home page', () => {
         NavigatePage.open();
+        $(resources.cookieMessage).waitForDisplayed({timeout:10000});
+        browser.switchToFrame($(resources.cookieMessage));
+        $(resources.agree).click();
+        browser.switchToParentFrame();
     });
 
     it('test should accept cookies', () => {
         const cookies = browser.getCookies()
         expect(cookies).toMatchObject(JSON);
-        //console.log(cookies)
         expect(cookies['domain']=='.sky.com').toBeTruthy
      });
 
     it('When I navigate to "Deals"', () => {
         expect(NavigatePage.deals).toHaveText("Deals")
-        browser.pause(500); //Explicit wait
-        NavigatePage.deals.click();
-        //waitAndClick(NavigatePage.deals,1000); -- implicit wait
+        waitAndClick(NavigatePage.deals,5000); 
     });
 
     it('Then I Should be on the offers page"', () => {

@@ -6,10 +6,14 @@ describe('User sees tiles on the shop page', () => {
 
     before('Given I am on the home page', () => {
         LoginPage.open();
+        $(resources.cookieMessage).waitForDisplayed({timeout:10000});
+        browser.switchToFrame($(resources.cookieMessage));
+        $(resources.agree).click();
+        browser.switchToParentFrame();
     });
 
     it('Click signin', () => {
-        //browser.pause(1000)
+
         $(resources.signin).click();
         expect(browser).toHaveTitle(resources.signInTitle);
         
