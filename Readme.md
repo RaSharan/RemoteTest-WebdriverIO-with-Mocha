@@ -4,7 +4,7 @@ To set up a framework and get the tests automated on the sky website.
 Automate them using JavaScript or TypeScript preferably using WebdriverIO with Mocha or Cucumber.
 And send the Github link
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------
 
 ***Feature file***
 
@@ -25,7 +25,8 @@ Feature: This feature will make sure that the shop page is navigable and usable.
         Then I should see a text saying that ‘Sorry, we did not recognise either your username or password’
 
 
-    Scenario: User sees a list of offers on the latest offers page Given I am on the 'https://www.sky.com/shop/' page 
+    Scenario: User sees a list of offers on the latest offers page
+        Given I am on the 'https://www.sky.com/shop/' page 
         Then I see a list of offers with a price to it (please see snapshot b)
 
     For example:
@@ -38,7 +39,8 @@ Feature: This feature will make the search show the results that are determined 
     Scenario: User sees the editorial section in specific searches
         Given I am on the home page
         When I search ‘sky’ in the search bar
-        Then I should see an editorial section. (Note: Editorial section is the section highlighted in snapshot c)
+        Then I should see an editorial section.
+        (Note: Editorial section is the section highlighted in snapshot c)
     (note: if ‘sky’ doesn’t work you can change it to ‘tv’)
 
 --------------------------------------------------------------------------------------------------------------------------------------
@@ -52,6 +54,7 @@ Feature: This feature will make the search show the results that are determined 
 
 --------------------------------------------------------------------------------------------------------------------------------------
 ***Pre-requisites***
+
 -You'll need Node.js installed globally
 -Install at least v12.16.1 or higher as this is the oldest active LTS version
 -Only releases that are or will become an LTS release are officially supported
@@ -70,4 +73,5 @@ $npx wdio wdio.conf.js
 
 --------------------------------------------------------------------------------------------------------------------------------------
 ***Spec***
+
 Test reporter, that prints detailed results to console.
