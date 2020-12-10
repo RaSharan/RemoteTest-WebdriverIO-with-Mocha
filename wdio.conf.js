@@ -17,18 +17,19 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js',
+        
+        //'./test/specs/**/*.js',
         //'./test/specs/**/search.page.js',
         //'./test/specs/**/search.js',
         //'./test/specs/**/latestOffers.page.js',
         //'./test/specs/**/latestOffers.js',
-        //'./test/specs/**/helper.js',
-        //'./test/specs/**/navigate.page.js',
-        //'./test/specs/**/navigateToShop.js',
+        './test/specs/**/helper.js',
+        './test/specs/**/navigate.page.js',
+        './test/specs/**/navigateToShop.js',
         //'./test/specs/**/verifySignIn.js',
         //'./test/specs/**/login.page.js',
-        //'./test/specs/**/page.js',
-        //'./test/specs/**/index.js',
+        './test/specs/**/page.js',
+        './test/specs/**/index.js',
     ],
     // Patterns to exclude.
     exclude: [
@@ -197,7 +198,7 @@ exports.config = {
         //agreeCookies();
         $(resources.cookieMessage).waitForDisplayed({timeout:10000});
         browser.switchToFrame($(resources.cookieMessage));
-        $(resources.agree).click();
+        $(resources.agree).click()
         browser.switchToParentFrame();
      },
     /**

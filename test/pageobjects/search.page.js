@@ -6,30 +6,35 @@ class SearchPage extends Page{
     }
 
     get searchBtn(){
-        return $("//*[@id='masthead-search-toggle']");
+        
+        return $("#masthead-search-toggle.button")
     }
 
     get searchInput(){
-        return $("//*[@id='masthead-navigation']/div/div[1]/div[2]/div/div/div/div/div/div/div/input")
+        
+        return $("#masthead-navigation > div input")
 
     }
 
     get searchSubmitBtn(){
-        return $("//*[@id='masthead-navigation']/div/div[1]/div[2]/div/div/div/div/div/div/div/button")
+        
+        return $("#masthead-navigation > div .search-submit-button")
 
     }
 
     get searchWrapper() {
-        return $("search-results-wrapper")
+        return $("#search-results-wrapper")
 
     }
 
     get searchEditorialTxt(){
-        return $("//*[@id='search-results-container']/div[1]/div[1]/div[2]/div/div[1]/a")
+        
+        return $("#search-results-container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1)")
     }
     
     get searchEditorialBody(){
-        return $("//*[@id='search-results-container']/div[1]/div[1]/div[2]/div/div[2]")
+        
+        return $("#search-results-container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2)")
     }
 }
 

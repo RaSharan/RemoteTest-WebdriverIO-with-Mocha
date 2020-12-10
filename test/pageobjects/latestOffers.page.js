@@ -6,7 +6,8 @@ class LatestOffersPage extends Page{
     }
 
     get offersHeader(){
-        return $('/html/body/div[6]/div[1]/section[2]/div/div/div[1]/div/h1');
+        
+        return $('div.c-page-1-section > div > h1')
     }
 
     get offerPrices(){

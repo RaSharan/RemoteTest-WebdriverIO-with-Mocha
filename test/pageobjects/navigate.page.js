@@ -6,7 +6,7 @@ class NavigatePage extends Page{
     }
 
     get deals(){
-        return $("//*[@id='masthead-navigation']/div/div[1]/div[1]/nav/ul/li[5]/div/div[1]/a");
+        return $("#masthead-navigation > div > div:nth-of-type(1) > div:nth-of-type(1) > nav > ul > li:nth-of-type(5) > div > div:nth-of-type(1) > a")
     }
 
 }
