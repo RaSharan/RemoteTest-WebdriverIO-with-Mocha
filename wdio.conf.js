@@ -19,8 +19,8 @@ exports.config = {
     specs: [
         
         //'./test/specs/**/*.js',
-        //'./test/specs/**/search.page.js',
-        //'./test/specs/**/search.js',
+        './test/specs/**/search.page.js',
+        './test/specs/**/search.js',
         //'./test/specs/**/latestOffers.page.js',
         //'./test/specs/**/latestOffers.js',
         './test/specs/**/helper.js',

@@ -29,12 +29,12 @@ class SearchPage extends Page{
 
     get searchEditorialTxt(){
         
-        return $("#search-results-container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(1)")
+        return $("div.header > a:nth-child(1)")
     }
     
     get searchEditorialBody(){
         
-        return $("#search-results-container > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div > div:nth-of-type(2)")
+        return $("div.c-text-body")
     }
 }
 

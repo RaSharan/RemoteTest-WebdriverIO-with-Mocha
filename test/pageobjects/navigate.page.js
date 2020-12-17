@@ -6,7 +6,7 @@ class NavigatePage extends Page{
     }
 
     get deals(){
-        return $("#masthead-navigation > div > div:nth-of-type(1) > div:nth-of-type(1) > nav > ul > li:nth-of-type(5) > div > div:nth-of-type(1) > a")
+        return $("a[data-tracking-label='masthead_visit_primary_deals_link']")
     }
 
 }
